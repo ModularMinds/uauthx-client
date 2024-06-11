@@ -5,5 +5,8 @@
   "repository": "https://github.com/ModularMinds/uauthx-client.git",
   "author": "Tanmay Vaij <tanmayvaij22@gmail.com>",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.14.2"
+  }
 }

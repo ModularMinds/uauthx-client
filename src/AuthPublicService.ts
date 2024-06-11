@@ -1,12 +1,14 @@
 import { UAuthXClient } from ".";
 
 export class AuthPublicService extends UAuthXClient {
-  constructor(server_url: string) {
-    super(server_url);
-  }
+  private apiUrls = {
+    signUpUrl: "/auth/sign-up",
+    signInUrl: "/auth/sign-in",
+    verifyUserUrl: "/auth/verify-user",
+  };
 
   async signUp(email: string, password: string) {
-    const res = await fetch(`${this.server_url}/auth/sign-up`, {
+    const res = await fetch(this.setEndpoint(this.apiUrls.signUpUrl), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -20,7 +22,7 @@ export class AuthPublicService extends UAuthXClient {
   }
 
   async signIn(email: string, password: string) {
-    const res = await fetch(`${this.server_url}/auth/sign-in`, {
+    const res = await fetch(this.setEndpoint(this.apiUrls.signInUrl), {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,8 +36,8 @@ export class AuthPublicService extends UAuthXClient {
   }
 
   async verifyUser(authorization: string) {
-    const res = await fetch(`${this.server_url}/auth/verify-user`, {
-      method: "POST",
+    const res = await fetch(this.setEndpoint(this.apiUrls.verifyUserUrl), {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
         Authorization: authorization,
