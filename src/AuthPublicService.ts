@@ -38,8 +38,8 @@ export class AuthPublicService extends UAuthXClient {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: authorization,
       },
-      body: JSON.stringify({ authorization }),
     });
 
     const data = await res.json();
