@@ -5,9 +5,10 @@
   "repository": "https://github.com/ModularMinds/uauthx-client.git",
   "author": "Tanmay Vaij <tanmayvaij22@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "scripts": {
     "build": "tsc"
   },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^20.14.2",
     "typescript": "^5.4.5"
